@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+.DS_Store
+node_modules
+/dist
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+=======
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +152,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+>>>>>>> 6264ce9334793aed83b3b4418146bf6a8b7b7bf9
+.gitconfig
