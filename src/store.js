@@ -7,14 +7,14 @@ toDoStorage = {
 		const tasks = JSON.parse(
 			localStorage.getItem(STORAGE_KEY) || "[]"
 		)
-		todos.forEach((todo, index) => {
-			todo.id = index
+		tasks.forEach((task, index) => {
+			task.id = index
 		})
-		toDoStorage.uid = todos.length
-		return todos
+		toDoStorage.uid = tasks.length
+		return tasks
 	},
-	save(todos) {
-		localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
+	save(tasks) {
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
 	}
 }
 

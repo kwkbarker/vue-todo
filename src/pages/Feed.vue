@@ -12,6 +12,12 @@
 
 <script>
 export default {
+	data() {
+		return {
+			
+			todos
+		}
+	}
     
 }
 </script>
