@@ -2,7 +2,7 @@ import { reactive } from "@vue/reactivity";
 
 const STORAGE_KEY = "todo-vue-storage"
 
-toDoStorage = {
+const taskStorage = {
 	fetch() {
 		const tasks = JSON.parse(
 			localStorage.getItem(STORAGE_KEY) || "[]"
@@ -10,20 +10,23 @@ toDoStorage = {
 		tasks.forEach((task, index) => {
 			task.id = index
 		})
-		toDoStorage.uid = tasks.length
+		taskStorage.uid = tasks.length
 		return tasks
-	},
-	save(tasks) {
-		localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
 	}
 }
 
 class Store {
 	constructor() {
 		this.state = reactive({
-			tasks: toDoStorage.fetch(),
+			tasks: taskStorage
 		})
 	}
+
+	save(tasks) {
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
+	} 
 }
 
-export const store = new Store()
+const store = new Store()
+
+export default { store }
